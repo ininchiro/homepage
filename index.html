@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>♨</title>
+  <style>
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: linear-gradient(135deg, #AFFF00, #00FF00, #FF00CC, #FFD700);
+      background-size: 400% 400%;
+      animation: psychedelic 8s infinite linear;
+      font-family: 'Arial Black', sans-serif;
+      color: #fff;
+      text-shadow: 0 0 10px #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    @keyframes psychedelic {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .video-container {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 200px;
+      height: 113px;
+      border: none;
+      padding: 0;
+      z-index: 10;
+    }
+
+    .video-container video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: none;
+      outline: none;
+    }
+
+    .logo {
+      max-width: 105vw;
+      max-height: 52.5vh;
+      margin-bottom: 10px;
+    }
+
+    .triangle {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-areas:
+        ". top ."
+        "left . right";
+      width: 250px;
+      height: 200px;
+    }
+
+    .triangle h1 {
+      font-size: 5rem;
+      color: #FFD700;
+      animation: sway 2s infinite ease-in-out;
+      cursor: pointer;
+      text-align: center;
+      text-shadow: 0 0 20px #FF00CC, 0 0 30px #FFD700;
+      margin: 0;
+    }
+
+    .triangle h1.top { grid-area: top; }
+    .triangle h1.left { grid-area: left; }
+    .triangle h1.right { grid-area: right; }
+
+    @keyframes sway {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(3deg); }
+      50% { transform: rotate(0deg); }
+      75% { transform: rotate(-3deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    .slashes {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 2rem;
+      color: gold;
+      text-shadow: 0 0 10px #FFD700;
+    }
+
+    .slash1, .slash2, .slash3, .slash4 {
+      font-size: 2rem;
+      color: gold;
+      animation-timing-function: ease-in-out;
+      text-align: center;
+    }
+
+    .slash1 { animation: pulse1 1.5s infinite; }
+    .slash2 { animation: pulse2 2s infinite; }
+    .slash3 { animation: pulse3 2.5s infinite; }
+    .slash4 { animation: pulse4 3s infinite; }
+
+    @keyframes pulse1 {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.5); }
+    }
+    @keyframes pulse2 {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.7); }
+    }
+    @keyframes pulse3 {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.6); }
+    }
+    @keyframes pulse4 {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.8); }
+    }
+  </style>
+</head>
+<body>
+  <div class="video-container">
+    <video width="200" height="113" controls autoplay muted loop>
+      <source src="IMG_2442.mp4" type="video/mp4">
+      お使いのブラウザは動画タグに対応していません。
+    </video>
+  </div>
+
+  <img class="logo" src="logo.png" alt="♨ロゴ">
+  <div class="triangle">
+    <h1 class="top">♨</h1>
+    <h1 class="left">♨</h1>
+    <h1 class="right">♨</h1>
+  </div>
+
+  <div class="slashes">
+    <div class="slash1">円</div>
+    <div class="slash2">円</div>
+    <div class="slash3">円</div>
+    <div class="slash4">円</div>
+  </div>
+
+  <audio id="onzen-audio" src="sound.mp3"></audio>
+
+  <script>
+    document.querySelector('.triangle h1.top').addEventListener('click', () => {
+      window.open('https://www.youtube.com/watch?v=CW4dCtwjxGQ', '_blank');
+    });
+    document.querySelector('.triangle h1.left').addEventListener('click', () => {
+      window.open('http://hxcxcx.blog22.fc2.com/', '_blank');
+    });
+    document.querySelector('.triangle h1.right').addEventListener('click', () => {
+      window.open('https://soundcloud.com/neppzec', '_blank');
+    });
+  </script>
+</body>
+</html>
