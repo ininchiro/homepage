@@ -96,13 +96,13 @@
       transform: translateY(-50%);
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 40px;
       font-size: 2rem;
       color: gold;
       text-shadow: 0 0 10px #FFD700;
     }
 
-    .slash1, .slash2, .slash3, .slash4 {
+    .slash1, .slash2 {
       font-size: 2rem;
       color: gold;
       animation-timing-function: ease-in-out;
@@ -111,8 +111,6 @@
 
     .slash1 { animation: pulse1 1.5s infinite; }
     .slash2 { animation: pulse2 2s infinite; }
-    .slash3 { animation: pulse3 2.5s infinite; }
-    .slash4 { animation: pulse4 3s infinite; }
 
     @keyframes pulse1 {
       0%, 100% { transform: scale(1); }
@@ -121,14 +119,6 @@
     @keyframes pulse2 {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.7); }
-    }
-    @keyframes pulse3 {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.6); }
-    }
-    @keyframes pulse4 {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.8); }
     }
   </style>
 </head>
@@ -150,8 +140,6 @@
   <div class="slashes">
     <div class="slash1">円</div>
     <div class="slash2">円</div>
-    <div class="slash3">円</div>
-    <div class="slash4">円</div>
   </div>
 
   <audio id="onzen-audio" src="sound.mp3"></audio>
